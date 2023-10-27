@@ -1,35 +1,51 @@
+from os import path
 
 def cn(cadena):
     try:
-        valor = float(cadena)  # Intenta convertir la cadena a un número flotante
+        valor = float(cadena)  
         if valor.is_integer():
-            return int(valor)  # Si es un número entero, conviértelo a entero
+            return int(valor)  
         else:
-            return valor  # De lo contrario, devuelve el número flotante
+            return valor  
     except ValueError:
-        return cadena  # Si no se puede convertir, devuelve Non
-    
-with open("src/db/Costos_producción.csv") as archivo:
+        return cadena 
+x = path.join(
+        path.dirname(path.abspath(__file__)),
+        "db/Costos_producción.csv"
+)
+with open(x) as archivo:
     costos = archivo.readlines()
     costos = list(map(lambda x: x.strip().split(","), costos))
     costos = list(map(lambda x: [cn(x[0]), cn(x[1]), cn(x[2])], costos))
-
-with open("src/db/movies.csv") as archivo:
+x = path.join(
+        path.dirname(path.abspath(__file__)),
+        "db/movies.csv"
+)
+with open(x) as archivo:
     pelis = archivo.readlines()
     pelis = list(map(lambda x: x.strip().split(","), pelis))
     pelis = list(map(lambda lista: list(map(cn, lista)), pelis))
-
-with open("src/db/ratings.csv") as archivo:
+x = path.join(
+        path.dirname(path.abspath(__file__)),
+        "db/ratings.csv"
+)
+with open(x) as archivo:
     ratings = archivo.readlines()
     ratings = list(map(lambda x: x.strip().split(","), ratings))
     ratings = list(map(lambda lista: list(map(cn, lista)), ratings))
-
-with open("src/db/Recursos_new.csv") as archivo:
+x = path.join(
+        path.dirname(path.abspath(__file__)),
+        "db/Recursos_new.csv"
+)
+with open(x) as archivo:
     recursos_new = archivo.readlines()
     recursos_new = list(map(lambda x: x.strip().split(","), recursos_new))
     recursos_new = list(map(lambda lista: list(map(cn, lista)), recursos_new))
-
-with open("src/db/Recursos.csv") as archivo:
+x = path.join(
+        path.dirname(path.abspath(__file__)),
+        "db/Recursos.csv"
+)
+with open(x) as archivo:
     recursos = archivo.readlines()
     recursos = list(map(lambda x: x.strip().split(","), recursos))
     recursos = list(map(lambda lista: list(map(cn, lista)), recursos))
