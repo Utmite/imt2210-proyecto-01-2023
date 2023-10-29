@@ -1,0 +1,14 @@
+d) Se seleccionaron las recomendaciones según los 30 vecinos más cercanos, luego dentro de las peliculas no vistas por el usuario 
+a consultar, es que se entregan en una lista las 13 peliculas en orden de búsqueda de prioridad por vecino. Se seleccionan los primeros 30 vecinos
+en caso de que si hubieran demasiadas similaritudes de peliculas entre los primeros vecinos, exitiera la posibilidad de hacer una recomendación con 
+aquellos que están más lejanos pero que aún pueden aportar películas no vistas. Se entregan 13 películas como opción al usuario para que pueda tener un 
+espacio de selección no tan acotado como un top 3 pero con un poco más de opciones que un top 10. Sin dejar una cantidad muy amplia que dificulte la selección.
+Por otro lado, es importante recalcar que se elige por orden las peliculas desde el vecino más cercano hasta que se acaben sus recomendaciones, 
+ya que, permite tener las peliculas más cercanas en gustos al usuario. De esta forma hay posibilidades de que encuentre mejores produccciones que ver, 
+teniendo en consideración que el promedio de los vecinos para recomendar podría no ser tan representativo como indicador.
+
+e)Los beneficios de utilizar la clase que se programó anteriormente es que posee distintos métodos que facilitan la aplicación 
+de operaciones dentro del problema planteado. Además del hecho que permite manejar aquellos casos en que no se tiene un rating, asumiéndose como cero.
+Por ende detro del contexto, existen múltiples veces en que el usuario podría tener elementos con valor cero dentro del diccionario asignado. 
+Es en ello que se clasifica como sparce data por la cantidad de datos con valor cero que existen. El manejo dentro de la clase no permite la existencia de operaciones,
+fuera del dominio, haciendo que el modelo de recomendación funcione correctamente, arrojando error en caso de que sea necesario.  
